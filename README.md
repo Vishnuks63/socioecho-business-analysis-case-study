@@ -1,60 +1,57 @@
 # SocioEcho — Business Analysis Case Study
 
 ## Overview
-SocioEcho is a college-focused social networking and mentorship platform designed to connect students with seniors, alumni, faculty/mentors and relevant opportunities.
 
-This case study demonstrates a self-directed Business Analysis workflow from problem definition through requirements analysis, process mapping, user stories, acceptance criteria, traceability, basic data analysis, change-impact analysis and Jira implementation.
+SocioEcho is a college-focused student networking platform that connects students and alumni through verified profiles, AI-moderated academic discussions, task-based mentorship rooms, AMA sessions, an event board and a resource library.
 
-> **Note:** This is a portfolio case study. The data-analysis dataset is simulated sample data created solely to demonstrate BA analysis techniques. It is not production or user data.
+This is a **portfolio case study** based on SocioEcho, my team's real final-year project. I documented it the way a Business Analyst would: problem definition → As-Is/To-Be analysis → requirements → process mapping → user stories and use cases → traceability → UAT test design → change-impact analysis → basic data analysis → Jira backlog.
+
+> **Note:** The requirements documented here cover a fuller version of the platform than the one we implemented, so not every functionality described was built. The [RTM](Requirements-Traceability-Matrix.md) shows the build status of each requirement. Stakeholder needs other than the student and administrator perspectives are assumptions. Jira was used to practise Scrum backlog structuring rather than to run a live project. The dataset used in the data analysis is **simulated** (generated with an AI assistant) and was created only to demonstrate analysis techniques. Quantitative targets (response times, concurrency, etc.) are **illustrative assumptions**.
 
 ## Business Problem
-Students can struggle to identify the right person for academic, placement, project and career guidance. Seniors and alumni may not know which students need help or what support is required. Useful resources are also distributed across different platforms.
 
-SocioEcho aims to provide a centralized solution for mentorship, resource sharing, mentorship sessions and relevant events/opportunities.
+Traditional social platforms lack academic context and expose students to distractions, misinformation and unmoderated content. Students find it hard to reach the right seniors or alumni for guidance, and useful resources are spread across many places. SocioEcho centralizes safe, role-verified academic interaction, resources, sessions and events.
 
-## Business Objectives
-- Enable students to communicate guidance needs to relevant stakeholders.
-- Provide centralized access to relevant resources and mentorship.
-- Help seniors and alumni identify students needing assistance.
-- Enable alumni to support multiple students efficiently.
-- Provide a centralized channel for relevant events and opportunities.
+## Implementation Status
+
+| Status | Features |
+|--------|----------|
+| Implemented | Role-based signup/login (Student, Alumni) with an Administrator role, AI screening of posts (BART-large-MNLI) with manual administrator review of flagged/reported posts, follow, replies, real-time chat, task-based mentorship rooms, AMA sessions, Resource Library (shared by students and alumni) |
+| Partial | Mentor responses (mentorship rooms and replies; no matching to expertise), Event Board (any user can create events; organizer-only restriction not built) |
+| Future scope | personalised AI-based mentor and resource recommendations, analytics dashboard, job/internship integration, AI moderation of Resource Library uploads |
+
+**Tech stack:** React, Redux, Tailwind CSS, Node.js, Express, MongoDB Atlas, JWT, bcrypt, BART-large-MNLI (Hugging Face).
+
+## Document Index
+
+| # | Deliverable | File |
+|---|-------------|------|
+| 1 | Business Requirements Document (BRD) | [Business-Requirements-Document.md](Business-Requirements-Document.md) |
+| 2 | Stakeholder Analysis | [Stakeholder-Analysis.md](Stakeholder-Analysis.md) |
+| 3 | As-Is / To-Be and Gap Analysis | [AsIs-ToBe-Gap-Analysis.md](AsIs-ToBe-Gap-Analysis.md) |
+| 4 | Functional and Non-Functional Requirements | [Functional-and-Non-Functional-Requirements.md](Functional-and-Non-Functional-Requirements.md) |
+| 5 | Process Map: Mentorship Request | [Mentorship-Request-Process.md](Mentorship-Request-Process.md) |
+| 6 | Process Map: Content Moderation (implemented) | [Content-Moderation-Process.md](Content-Moderation-Process.md) |
+| 7 | User Stories and Acceptance Criteria | [User-Stories-and-Acceptance-Criteria.md](User-Stories-and-Acceptance-Criteria.md) |
+| 8 | Use Cases | [Use-Cases.md](Use-Cases.md) |
+| 9 | Requirements Traceability Matrix (RTM) | [Requirements-Traceability-Matrix.md](Requirements-Traceability-Matrix.md) |
+| 10 | UAT Test Cases | [UAT-Test-Cases.md](UAT-Test-Cases.md) |
+| 11 | Change Impact Analysis | [Change-Impact-Analysis.md](Change-Impact-Analysis.md) |
+| 12 | Data Analysis and Insights | [Data-Analysis-and-Insights.md](Data-Analysis-and-Insights.md) |
+| 13 | Jira Implementation | [Jira-Implementation.md](Jira-Implementation.md) |
+| 14 | Implementation Evidence (screenshots) | [Implementation-Evidence.md](Implementation-Evidence.md) |
+
+## Traceability Chain
+
+`Business Objective (BO) → Functional/Non-Functional Requirement (FR/NFR) → User Story (US) → Use Case (UC) → Test Case (TC)`
 
 ## Scope
-### In scope
-- Student mentorship requests
-- Student/senior/alumni connections
-- Resource sharing
-- Mentorship sessions
-- Event and opportunity publishing
 
-### Out of scope
-- Physical/in-person mentorship coordination
-- General advertising
-- Academic eligibility/access decisions such as CGPA-based decisions
-
-## BA Deliverables
-1. Business Requirements Document
-2. Stakeholder Analysis
-3. Functional and Non-Functional Requirements
-4. Process Mapping
-5. User Stories and Acceptance Criteria
-6. Requirements Traceability Matrix
-7. Basic Data Analysis
-8. Change Impact Analysis
-9. Jira Implementation
+**In scope:** mentorship requests, connections between students and alumni, resource sharing, mentorship (AMA) sessions, event publishing, AI-assisted content moderation with human review, role-based access.
+**Out of scope:** physical/in-person mentorship coordination, general advertising, academic eligibility or access decisions (e.g., CGPA-based).
 
 ## Tools / Techniques
-- Requirements elicitation
-- Stakeholder analysis
-- Process mapping
-- Functional/non-functional requirements
-- User stories
-- Acceptance criteria
-- Requirements traceability
-- Basic descriptive data analysis
-- Change impact analysis
-- Jira / Agile work management
-- Markdown documentation
 
-## Outcome
-The case study demonstrates an end-to-end, entry-level BA approach for translating a business problem into clearly documented and traceable IT solution requirements.
+Requirements elicitation (based on own experience and assumptions), stakeholder analysis, As-Is/To-Be and gap analysis, process mapping (Mermaid flowcharts), BRD/FRD, user stories (Given-When-Then), use cases, MoSCoW prioritization, RTM, UAT test design, change-impact analysis, descriptive data analysis on simulated data (Power BI), and Jira (Scrum) used to practise backlog structuring (epics, stories, subtasks).
+
+**Author:** Vishnu K S
